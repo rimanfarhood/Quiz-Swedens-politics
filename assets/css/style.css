@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+
+* {
+    font-family: lora, sans-serif;
+    background-color: black;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+ body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+ }
