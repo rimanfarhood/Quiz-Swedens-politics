@@ -18,3 +18,59 @@
     font-size: 30px;
     margin-top: 20%;
 }
+
+header h1 {
+    padding-left: 10px;
+    font-size: 35px;
+}
+
+main {
+    width: 50%;
+    margin: 9% auto;
+    text-align: center;
+}
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn, #next-btn {
+    padding: 15px 10px;
+    margin: 10px 0;
+    border: 5px ridge #fff;
+    font-size: 20px;
+}
+
+#next-btn {
+    float: right;
+}
+ 
+ #quit-btn {
+     border: 1px groove red;
+ }
+ 
+ #quit-btn:hover {
+     box-shadow: 0 0 2px 1px red;
+ 
+ }
+ 
+ footer {
+     width: 100%;
+     position: sticky;
+     margin-top: auto;
+     font-size: 30px;
+     text-align: center;
+ }
+ 
+ footer a {
+     padding: 30px;
+ }
+ 
+ @media screen and (max-width: 465px ) {
+     .btn {
+         font-size: 13px;
+         padding: 10px 50px;
+         padding-left: 5px;   
+     }
+ }
