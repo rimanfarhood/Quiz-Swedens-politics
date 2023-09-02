@@ -1,4 +1,4 @@
-const questions = [
+let questions = [
     {
         question: "How often are there elections?",
         answers: [
@@ -113,7 +113,7 @@ function startQuiz() {
 
     currentQuestionIndex = 0;
     score = 0;
-
+    questions = shuffle(questions);
     document.getElementById("score").innerText = 0;
     document.getElementById("incorrect").innerText = 0;
     nextBtn.innerHTML = "Next"
@@ -129,6 +129,8 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNr = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNr + ". " + currentQuestion.question;
+
+    currentQuestion.answers = shuffle(currentQuestion.answers);
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -202,3 +204,16 @@ function handleNextButton() {
     }
 }
 
+/**
+ * Fisher-Yates Shuffle used to shuffle arrays
+ * @param {[]} array - an array to shuffle
+ * @returns {[]} array - shuffled array
+ */
+function shuffle(array) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+      array.push(array[randomIndex]);
+      array.splice(randomIndex, 1);
+    }
+    return array;
+}
