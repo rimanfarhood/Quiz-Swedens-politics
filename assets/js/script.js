@@ -120,6 +120,10 @@ function startQuiz() {
     showQuestion();
 }
 
+
+/**
+ * Displays the questions
+ */
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -138,6 +142,9 @@ function showQuestion() {
     });
 }
 
+/**
+ * Displays next question.
+ */
 function resetState() {
     nextBtn.style.display = 'none';
     while(answerButtons.firstChild){
@@ -145,6 +152,10 @@ function resetState() {
     }
 }
 
+/**
+ * 
+ * @param {Event} e - User click event 
+ */
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === 'true';
@@ -165,5 +176,12 @@ function selectAnswer(e) {
         }
         button.disabled = true;
     });
+    nextBtn.style.display = 'block';
+}
+
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `You scored ${score} out or ${questions.length}!`;
+    nextBtn.innerHTML = 'Play Again'
     nextBtn.style.display = 'block';
 }
