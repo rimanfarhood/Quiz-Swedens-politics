@@ -46,6 +46,22 @@ main {
 #next-btn {
     float: right;
 }
+
+.btn:hover:not([disabled]), #next-btn:hover {
+    box-shadow: 0 0 5px 4px #fff;
+ }
+ 
+ .btn:disabled {
+     cursor: no-drop;
+ }
+ 
+ .correct {
+     background-color: green;
+ }
+ 
+ .incorrect {
+     background-color: red;
+ }
  
  #quit-btn {
      border: 1px groove red;

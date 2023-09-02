@@ -140,3 +140,26 @@ function resetState() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === 'true';
+    if(isCorrect){
+        selectedBtn.classList.add('correct');
+        score++
+        let oldScore = docuemnt.getElementById("score").innerText;
+        document.getElementById("score").innerText = ++oldScore;
+    } else {
+        selectedBtn.classList.add('incorrect');
+        let oldScore = document.getElementById("incorrect").innerText;
+        document.getElementById("incorrect").innerText = ++oldScore;
+    }
+    Array.from(answerButtons.children).forEach(button => {
+        if(button.dataset.correct === 'true') {
+            button.classList.add('correct');
+
+        }
+        button.disabled = true;
+    });
+    nextBtn.style.display = 'block';
+}
