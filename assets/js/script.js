@@ -1,6 +1,6 @@
-const qustions = [
+const questions = [
     {
-        quetsion: "How often are there elections?",
+        question: "How often are there elections?",
         answers: [
             { text: 'Every four year', correct: true},
             { text: 'Once a year', correct: false},
@@ -86,7 +86,7 @@ const qustions = [
     }
 ];
 
-const questionElement = document.getElementById("qusetion");
+const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextBtn = document.getElementById("next-btn");
 
@@ -104,6 +104,9 @@ quitBtn.addEventListener('click', ()=> {
     game.style.display = 'none';
 })
 
+/**
+ * Displays the quiz game
+ */
 function startQuiz() {
     start.style.display = 'none';
     game.style.display = 'block';
@@ -118,6 +121,7 @@ function startQuiz() {
 }
 
 function showQuestion() {
+    resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNr = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNr + ". " + currentQuestion.question;
