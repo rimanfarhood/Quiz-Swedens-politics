@@ -64,7 +64,7 @@ let questions = [
         answers: [
             { text: "The form of government, the succession order, the freedom of the press regulation and the freedom of expression law ", correct: true},
             { text: "Common law, the form of government, the Criminal Code and the Discrimination Act", correct : false},
-            { text: "The Freedom of Expression Act, the form of government and the rules of the Riksdag", correct: false},
+            { text: "The Freedom of Expression Act, the form of government and the rules of the parlament", correct: false},
         ]
     },
     {
@@ -113,10 +113,11 @@ function startQuiz() {
 
     currentQuestionIndex = 0;
     score = 0;
+    highScore.innerHTML = localStorage.getItem("score") || 0;
     questions = shuffle(questions);
     document.getElementById("score").innerText = 0;
     document.getElementById("incorrect").innerText = 0;
-    nextBtn.innerHTML = "Next"
+    nextBtn.innerHTML = "Next";
     showQuestion();
 }
 
@@ -164,7 +165,7 @@ function selectAnswer(e) {
     if(isCorrect){
         selectedBtn.classList.add('correct');
         score++
-        let oldScore = docuemnt.getElementById("score").innerText;
+        let oldScore = document.getElementById("score").innerText;
         document.getElementById("score").innerText = ++oldScore;
     } else {
         selectedBtn.classList.add('incorrect');
@@ -187,7 +188,8 @@ function selectAnswer(e) {
 function showScore() {
     resetState();
 
-    questionElement.innerHTML = `You scored ${score} out or ${questions.length}!`;
+    highScore.innerHTML = setHighScore(score);
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextBtn.innerHTML = 'Play Again'
     nextBtn.style.display = 'block';
 }
@@ -197,7 +199,7 @@ function showScore() {
  */
 function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length) {
+    if(currentQuestionIndex < questions.length){
         showQuestion();
     } else {
         showScore();
@@ -219,6 +221,21 @@ function shuffle(array) {
 }
 
 
+/**
+ * 
+ * @param {Event} gameScore 
+ * @returns 
+ */
+function setHighScore(gameScore) {
+    let localHighScore = window.localStorage.getItem("score");
+
+    if (localHighScore && localHighScore > gameScore) {
+        return localHighScore;
+    } else {
+        window.localStorage.setItem("score", gameScore);
+        return gameScore;
+    }
+}
 
 nextBtn.addEventListener('click', ()=> {
     if(currentQuestionIndex < questions.length) {
