@@ -218,6 +218,8 @@ function shuffle(array) {
     return array;
 }
 
+
+
 nextBtn.addEventListener('click', ()=> {
     if(currentQuestionIndex < questions.length) {
         handleNextButton();
