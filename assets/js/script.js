@@ -133,3 +133,10 @@ function showQuestion() {
         button.addEventListener('click', selectAnswer);
     });
 }
+
+function resetState() {
+    nextBtn.style.display = 'none';
+    while(answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
