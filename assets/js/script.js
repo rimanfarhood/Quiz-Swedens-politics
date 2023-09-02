@@ -64,7 +64,7 @@ const qustions = [
         answers: [
             { text: "The form of government, the succession order, the freedom of the press regulation and the freedom of expression law ", correct: true},
             { text: "Common law, the form of government, the Criminal Code and the Discrimination Act", correct : false},
-            { text: "Yttrandefrihetsgrundlagen, regeringsformen och riksdagsordningen", correct: false},
+            { text: "The Freedom of Expression Act, the form of government and the rules of the Riksdag", correct: false},
         ]
     },
     {
@@ -85,3 +85,29 @@ const qustions = [
         ]
     }
 ];
+
+const questionElement = document.getElementById("qusetion");
+const answerButtons = document.getElementById("answer-buttons");
+const nextBtn = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const start = document.getElementById("start");
+const startBtn = document.getElementById("start-btn");
+const game = document.getElementById("game");
+const quitBtn = document.getElementById("quit-btn");
+const highScore = document.getElementById("high-score");
+
+function startQuiz() {
+    start.style.display = 'none';
+    game.style.display = 'block';
+
+    currentQuestionIndex = 0;
+    score = 0;
+
+    document.getElementById("score").innerText = 0;
+    document.getElementById("incorrect").innerText = 0;
+    nextBtn.innerHTML = "Next"
+    showQuestion();
+}

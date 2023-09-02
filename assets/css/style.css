@@ -28,6 +28,7 @@ main {
     width: 50%;
     margin: 9% auto;
     text-align: center;
+    display: none;
 }
 
 #answer-buttons {
