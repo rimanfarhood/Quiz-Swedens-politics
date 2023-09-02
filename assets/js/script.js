@@ -116,3 +116,20 @@ function startQuiz() {
     nextBtn.innerHTML = "Next"
     showQuestion();
 }
+
+function showQuestion() {
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNr = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNr + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = 'true';
+        }
+        button.addEventListener('click', selectAnswer);
+    });
+}
