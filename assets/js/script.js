@@ -9,7 +9,7 @@ let questions = [
         ]
     },
     {
-        question: "can you be convicted for saying something racist to someone?",
+        question: "Can you be convicted for saying something racist to someone?",
         answers: [
             { text: "No", correct: false},
             { text: "Yes", correct: true},
@@ -51,7 +51,7 @@ let questions = [
         ]
     },
     {
-        question: 'How many seats are there in the Parliament?',
+        question: 'How many mandates are there in the Parliament?',
         answers: [
             { text: '49', correct: false},
             { text: '349', correct: true},
@@ -68,15 +68,15 @@ let questions = [
         ]
     },
     {
-        question: 'How are the seats in the Parliament distributed?',
+        question: 'How are the mandates in the Parliament distributed?',
         answers: [
-            { text: 'The party gets as many procent of the seats as they got in the election', correct: true},
+            { text: 'The party gets as many percent of the seats as they got in the election', correct: true},
             { text: 'Equally', correct: false},
-            { text: 'The mandats are drawn', correct: false},
+            { text: 'The mandates are drawn', correct: false},
         ]
     },
     {
-        question: 'How many procent of the votes is needed to be in the Parlament',
+        question: 'How many percent of the votes is needed to be in the Parlament?',
         answers: [
             { text: '20%', correct: false},
             { text: '2%', correct: false},

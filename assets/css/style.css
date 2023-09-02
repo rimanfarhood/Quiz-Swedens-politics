@@ -5,30 +5,39 @@
     background-color: black;
     color: #fff;
     box-sizing: border-box;
+    margin: 0;
+    line-height: 1.5em;
 }
 
- body {
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
  }
 
- #start {
+#start {
     text-align: center;
     font-size: 30px;
-    margin-top: 20%;
+    margin: auto 20px;
+    letter-spacing: 2px;
 }
 
-header h1 {
-    padding-left: 10px;
-    font-size: 35px;
+#start-btn {
+    margin: 50px 0 0;
+    padding: 15px 20px;
+    font-size: 25px;
 }
 
 main {
-    width: 50%;
-    margin: 9% auto;
+    width: 80%;
+    margin: 60px auto;
     text-align: center;
+    justify-content: center;
     display: none;
+}
+
+h1, h2 {
+    margin: 10px 0;
 }
 
 #answer-buttons {
@@ -36,58 +45,77 @@ main {
     flex-direction: column;
 }
 
-.btn, #next-btn {
+.btn {
     padding: 15px 10px;
-    margin: 10px 0;
+    margin: 15px 0;
     border: 5px ridge #fff;
     font-size: 20px;
 }
 
 #next-btn {
     float: right;
+    margin: 0;
+    padding: 7px 15px;
 }
 
 .btn:hover:not([disabled]), #next-btn:hover {
     box-shadow: 0 0 5px 4px #fff;
- }
+}
  
- .btn:disabled {
-     cursor: no-drop;
- }
+.btn:disabled {
+    cursor: no-drop;
+}
  
- .correct {
-     background-color: green;
- }
+.correct {
+    background-color: green;
+}
  
- .incorrect {
-     background-color: red;
- }
+.incorrect {
+    background-color: red;
+}
  
- #quit-btn {
-     border: 1px groove red;
- }
+#quit-btn {
+    border: 1px groove red;
+}
  
- #quit-btn:hover {
-     box-shadow: 0 0 2px 1px red;
+#quit-btn:hover {
+    box-shadow: 0 0 2px 1px red;
  
- }
+}
+
+.score-area p {
+    margin: 10px 0;
+    text-align: left;
+}
  
- footer {
-     width: 100%;
-     position: sticky;
-     margin-top: auto;
-     font-size: 30px;
-     text-align: center;
- }
+footer {
+    width: 100%;
+    position: sticky;
+    margin-top: auto;
+    font-size: 30px;
+    text-align: center;
+}
  
- footer a {
-     padding: 30px;
- }
+footer a {
+    padding: 30px;
+}
  
- @media screen and (max-width: 465px ) {
-     .btn {
-         font-size: 13px;
-         padding: 10px 50px;
-         padding-left: 5px;   
-     }
- }
+@media screen and (max-width: 465px ) {
+
+    body {
+        font-size: 13px;
+    }
+
+    #start {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 10px 50px; 
+        font-size: 13px;
+    }
+
+    #next-btn {
+        padding: 5px 7px ;
+    }
+}
