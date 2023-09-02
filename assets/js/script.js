@@ -99,6 +99,11 @@ const game = document.getElementById("game");
 const quitBtn = document.getElementById("quit-btn");
 const highScore = document.getElementById("high-score");
 
+quitBtn.addEventListener('click', ()=> {
+    start.style.display = 'block';
+    game.style.display = 'none';
+})
+
 function startQuiz() {
     start.style.display = 'none';
     game.style.display = 'block';
