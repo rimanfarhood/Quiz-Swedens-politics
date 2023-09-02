@@ -179,9 +179,26 @@ function selectAnswer(e) {
     nextBtn.style.display = 'block';
 }
 
+/**
+ * Displays result at the end of game and gives user option to play again or to quit.
+ */
 function showScore() {
     resetState();
+
     questionElement.innerHTML = `You scored ${score} out or ${questions.length}!`;
     nextBtn.innerHTML = 'Play Again'
     nextBtn.style.display = 'block';
 }
+
+/**
+ * Handles next button. 
+ */
+function handleNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
