@@ -108,8 +108,8 @@ DESC
 
 ## Tecnologies used
 
-  * 
-  * 
+  * HTML
+  * CSS
 
 ## Deployment 
 
