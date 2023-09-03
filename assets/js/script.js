@@ -16,7 +16,7 @@ let questions = [
         ]
     },
     {
-        question: 'Who got most votes last(2022) election?',
+        question: 'Who received the most votes in the previous election in 2022?',
         answers: [
             { text: 'Sverigedemokraterna', correct: false},
             { text: 'Liberalerna', correct: false},
@@ -25,9 +25,9 @@ let questions = [
         ]
     },
     {
-        question: 'Who is head of state?',
+        question: 'Who holds the position of head of state?',
         answers: [
-            { text: 'Prime menister', correct: false},
+            { text: 'Prime minister', correct: false},
             { text: 'The speaker', correct: false},
             { text: 'The king', correct: true},
         ]
@@ -60,7 +60,7 @@ let questions = [
         ]
     },
     {
-        question: "Which are Sweden's constitutions", 
+        question: "What are Sweden's constitutions?", 
         answers: [
             { text: "The form of government, the succession order, the freedom of the press regulation and the freedom of expression law ", correct: true},
             { text: "Common law, the form of government, the Criminal Code and the Discrimination Act", correct : false},
@@ -219,7 +219,6 @@ function shuffle(array) {
     }
     return array;
 }
-
 
 /**
  * 
