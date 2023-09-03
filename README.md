@@ -150,12 +150,12 @@ The live link can be found here - [Quiz Swe Politics](https://rimanfarhood.githu
 
 ### Creating a Local Clone 
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Navigate to the GitHub repository
+2. Click on the "Code" drop-down button.
+3. Choose local and HTTPS you will have a link copy that URL
+4. If wanted, change the current working directory in GitPod to the location desired.
+5. Type "git clone" and paste the URL from GitHub.
+6. Press "Enter" and the local clone will be create.
 
 ## Credits 
 ### Code 
