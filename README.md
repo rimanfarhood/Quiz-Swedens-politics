@@ -1,8 +1,8 @@
 # QUIZ SWEDEN'S POLITICS 
 
-DESC
+A quiz a that tests how generally educated you are in Swedish politics, contains 10 easy-level questions that you should know if you are a resident of Sweden. 
 
-![Responsive Mockup]()
+![Responsive Mockup](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/amiresponsive.jpeg)
 
 ## Features
 
