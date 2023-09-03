@@ -144,9 +144,9 @@ The live link can be found here - [Quiz Swe Politics](https://rimanfarhood.githu
 
 ### Forking GitHub Repository
 
-1. 
-2. 
-3. 
+1. Log into GitHub and locate the repository.
+2. Choose the option Fork" at the top of the screen, to create a copy of the repository.
+3. A copy of the repository will be created in your GitHub account.
 
 ### Creating a Local Clone 
 
