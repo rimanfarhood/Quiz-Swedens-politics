@@ -97,26 +97,26 @@ footer {
 }
  
 footer a {
-    padding: 30px;
+    padding: 0 30px 10px;
 }
  
-@media screen and (max-width: 465px ) {
+@media screen and (max-width: 550px ) {
 
     body {
         font-size: 13px;
     }
 
     #start {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     main {
         width: 80%;
     }
 
-    .btn {
+    .btn, #start-btn {
         padding: 10px 50px; 
-        font-size: 13px;
+        font-size: 16px;
     }
 
     #next-btn {
