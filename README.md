@@ -140,7 +140,7 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 
      The page will refresch, it might take a couple minutes. 
 
-The live link can be found here - [Quiz Swe Politics](https://rimanfarhood.github.io/Quiz-Swedens-politics/)
+The live link can be found here - [Quiz Swe Politics](https://rimanfarhood.github.io/Quiz-Swedens-politics/).
 
 ### Forking GitHub Repository
 
@@ -160,10 +160,11 @@ The live link can be found here - [Quiz Swe Politics](https://rimanfarhood.githu
 ## Credits 
 ### Code 
 
- * []()
- * []()
+ * Tutorial on how to make a quiz with JavaScript - [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1478s).
+ * Code on how to shuffle an array with JavaScript - [Fisher-Yates](https://medium.com/@omar.rashid2/fisher-yates-shuffle-a2aa15578d2f).
+ * I also used Love Maths as help and inspiration to do the correct and incorrect answers. 
 
 ### Content 
 
-- Icons []()
+- Icons [Font Awsome](https://fontawesome.com/).
 
