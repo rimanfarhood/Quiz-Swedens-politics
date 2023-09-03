@@ -9,7 +9,7 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 ### Site Wide 
 
 * Footer 
-    * 
+    * Containing two social media icons connected to my GitHub and LinkedIn profile.
 
 ![]()
 
@@ -22,6 +22,13 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 
 ![]()
 
+### The Quiz 
+
+![]()
+
+### End of quiz
+
+![]()
 ## Design 
 
 ### WireFrames 
