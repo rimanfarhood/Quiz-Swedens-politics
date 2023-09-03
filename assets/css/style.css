@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
 
+/* Site wide */
 * {
     font-family: lora, sans-serif;
     background-color: black;
@@ -13,7 +14,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
- }
+}
+
+/* The landing page section */
 
 #start {
     text-align: center;
@@ -28,9 +31,11 @@ body {
     font-size: 25px;
 }
 
+/* The quiz */
+
 main {
     width: 60%;
-    margin: 60px auto;
+    margin: auto;
     text-align: center;
     justify-content: center;
     display: none;
@@ -66,7 +71,7 @@ h1 {
 .btn:disabled {
     cursor: no-drop;
 }
- 
+ /* For answer-buttons to display result */
 .correct {
     background-color: green;
 }
@@ -83,12 +88,14 @@ h1 {
     box-shadow: 0 0 2px 1px red;
  
 }
-
+/* Scores in quiz */
 .score-area p {
     margin: 10px 0;
     text-align: left;
 }
  
+/* Footer */
+
 footer {
     width: 100%;
     position: sticky;
@@ -99,6 +106,8 @@ footer {
 footer a {
     padding: 0 30px 10px;
 }
+
+/* Media queries for screen size max-width 550px */
  
 @media screen and (max-width: 550px ) {
 

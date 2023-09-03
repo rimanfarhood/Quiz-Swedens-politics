@@ -1,3 +1,5 @@
+// Questions and answer options for the quiz.
+
 let questions = [
     {
         question: "How often are there elections?",
@@ -120,7 +122,6 @@ function startQuiz() {
     nextBtn.innerHTML = "Next";
     showQuestion();
 }
-
 
 /**
  * Displays the questions
