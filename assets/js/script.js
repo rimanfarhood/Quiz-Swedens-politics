@@ -159,6 +159,8 @@ function resetState() {
 /**
  * 
  * @param {Event} e - User click event 
+ * Changes the background color depending on the result of the selected answers button.
+ * Increases the correct and incorrect scores.
  */
 function selectAnswer(e) {
     const selectedBtn = e.target;

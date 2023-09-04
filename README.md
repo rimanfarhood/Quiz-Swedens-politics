@@ -43,48 +43,78 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
 
 ### WireFrames 
 
-![]()
+![Wireframe](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/wireframes/wireframes.jpeg)
 
 ## Testing 
 
 ### Manually testing 
 
-* Buttons 
+### Buttons
 
-    .The Start Quiz button is expected to display quiz to the user.
+---
+   **- The Start Quiz button is expected to display quiz to the user.**
 
-      - Result: When clicking the button it displays the quiz as it is supposed to do.
+   **Result:** When clicking the button it displays the quiz as it is supposed to do.
 
-    
-    .The answer option buttons is expected to display the diffrent answers to that specific question and when the user makes a choice the background is supposed to change to red  
-      or green depending on the result.
+--- 
+   **- The answer option buttons is expected to display the diffrent answers to that specific question and when the user makes a choice the background is supposed to change to red or green depending on the result.**
 
-      -  Result: The button diplays the answers options and when correct answer selected button turns green if wrong the button tu
-        rns red and correct option turns green as expected.
-    
+   **Result:** The button diplayed the answers options and when correct the selected option turned green, when wrong the button turned red and correct option turned green as expected.
 
-    .The Next button is expected to display the next question if there is more questions if not is it supposed to display the results.
+---
+   **- The Next button is expected to display the next question if there is more questions if not is it supposed to display the results.**
 
-       -  Result: The button displays the next question after te last question it displays the results. 
+   **Result:** The button displayed the next question, after the last question it displayed the results. 
 
-* Functions 
+---
+   **- The Quit button is expected to take the user back to the start.**
 
-    * 
-    * 
-    * 
-    * 
-    * 
-    * 
-    * 
-    * 
+   **Result:** When the button where tested it navigated back to the start as intended. 
 
-* External links
+---
+### Functions 
 
-    * 
+   **startQuiz - Expected to hide the start quiz section and display the quiz.** 
 
-* Responsiveness
+   **Result:** The function hidd start section and displayed the quiz as expected. 
 
-    * 
+---
+   **showQuestion - Expected to display the questions and answers opitons.** 
+
+   **Result:** The questions and answers options were displayed as expected. 
+
+---
+   **resetState - Expected to display the next question, hide the next button.** 
+
+   **Result:** The start section is hidden and the quiz is displayed as expected. 
+
+---
+   **selectedAnswer - Expected to validate the user's answer choice, if the answer is correct, the selected option's background will turn green. In case of an incorrect answer, it turns red and the correct option is shown in green. In case of color vision deficiency i choose to display the correct and incorrect scores which increase depending on the result.** 
+
+   **Result:** The selected option's background turned red when incorrect, the correct option turned green and the 'incorrect answers:' score increased. When correct it turned green and the 'correct answers:' score increased. 
+
+---
+**showScore - Is expected to display result at the end of game and gives user the options to play again or to quit.** 
+
+   **Result:** The results and the options to play again or to quit where displayed, when choosing to play again the quiz started again with my highest score from before display. When choosing to quit i was taken back to start again.
+
+---
+**handleNextButton - Is expected handle the next button, if there is more questions they should be displayed and if not the results should be displayed.** 
+
+   **Result:** When using the next button the next question were displayed, after the last question the results were displayed as intended. 
+
+---
+**shuffle(array) - Is expected to shuffle the arrays.** 
+
+   **Result:** The function is shuffling the items inside the array as expected.  
+
+---
+**setHighScore(gameScore) - Is expected to display the users highest score saved in window local storage, if user beats the last score the new score is displayed.** 
+
+   **Result:** Did the quiz aimed at a low score to test it, first round my highest score were 3. Next round my score while doing the quiz remained 3 even when passing it, at the end when the results where displayed my highest score changed 8 the new score. The function worked as expected.   
+
+---
+
 
 ### Wave
 
