@@ -154,10 +154,6 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
 
 ![CSS](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/w3c.jpeg)
 
-### Unfixed Bugs 
-
-* 
-
 ## Tecnologies used
 
   * HTML, for the Structure.
