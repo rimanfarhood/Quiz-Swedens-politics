@@ -94,28 +94,34 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
    **Result:** The selected option's background turned red when incorrect, the correct option turned green and the 'incorrect answers:' score increased. When correct it turned green and the 'correct answers:' score increased. 
 
 ---
-**showScore - Is expected to display result at the end of game and gives user the options to play again or to quit.** 
+   **showScore - Is expected to display result at the end of game and gives user the options to play again or to quit.** 
 
    **Result:** The results and the options to play again or to quit where displayed, when choosing to play again the quiz started again with my highest score from before display. When choosing to quit i was taken back to start again.
 
 ---
-**handleNextButton - Is expected handle the next button, if there is more questions they should be displayed and if not the results should be displayed.** 
+   **handleNextButton - Is expected handle the next button, if there is more questions they should be displayed and if not the results should be displayed.** 
 
    **Result:** When using the next button the next question were displayed, after the last question the results were displayed as intended. 
 
 ---
-**shuffle(array) - Is expected to shuffle the arrays.** 
+   **shuffle(array) - Is expected to shuffle the arrays.** 
 
    **Result:** The function is shuffling the items inside the array as expected.  
 
 ---
-**setHighScore(gameScore) - Is expected to display the users highest score saved in window local storage, if user beats the last score the new score is displayed.** 
+   **setHighScore(gameScore) - Is expected to display the users highest score saved in window local storage, if user beats the last score the new score is displayed.** 
 
    **Result:** Did the quiz aimed at a low score to test it, first round my highest score were 3. Next round my score while doing the quiz remained 3 even when passing it, at the end when the results where displayed my highest score changed 8 the new score. The function worked as expected.   
 
 ---
 
+### External links
 
+   **Icons - should open the social media in a new tab.** 
+
+   **Result:** When testing the GitHub icon a new tab opened with my GitHub profile, when testing the LinkedIn icon a new tab with my LinkedIn profile opened. The links worked as expected.
+
+---
 ### Wave
 
 * I had an error due to an empty button that I corrected by adding content to the button. 
