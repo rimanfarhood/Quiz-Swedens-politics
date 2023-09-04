@@ -158,6 +158,17 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
 
 ![JSHint](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/jshint.jpeg)
 
+### Bugs 
+
+**Problem:**
+
+   - The high score were not being set at the start of the if the user didn't have the local storage item.
+
+**Solution:**
+
+   - I added the "|| 0" to the end in the startQuiz function so it would default to 0 to solve that problem.
+
+
 ## Tecnologies used
 
   * HTML, for the Structure.
