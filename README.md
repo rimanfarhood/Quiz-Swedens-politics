@@ -1,6 +1,6 @@
 # QUIZ SWEDEN'S POLITICS 
 
-A quiz a that tests how generally educated you are in Swedish politics, contains 10 easy-level questions that you should know if you are a resident of Sweden. 
+This quiz assesses your general knowledge of Swedish politics and includes 10 easy-level questions that you should be familiar with if you are a resident of Sweden. 
 
 ![Responsive Mockup](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/amiresponsive.jpeg)
 
@@ -29,7 +29,7 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
     * A simple layout, including a question, response options and a scoring system.
     * When the user selects an answer, the button will turn red or green, depending on whether the answer is correct and the score will increase.  
 
-![The Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/start.jpeg)
+![The Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/quiz.jpeg)
 
 ### End of quiz
 
@@ -38,7 +38,7 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
     * A score board with the current result also the highest score of any time if the user wants to replay.
     * This will give the user a overview of the results.
 
-![End of Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/quiz.jpeg)
+![End of Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/end.jpeg)
 ## Design 
 
 ### WireFrames 
