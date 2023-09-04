@@ -11,24 +11,33 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 * Footer 
     * Containing two social media icons connected to my GitHub and LinkedIn profile.
 
-![]()
+![Footer](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/footer.jpeg)
 
 ### Landing Page
 
 * Start quiz
 
-    * 
-    * 
+    * Offers a brief explanation of the quiz's content to the user and the option to continue with the quiz.
 
-![]()
+![Landing Page](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/start.jpeg)
 
 ### The Quiz 
 
-![]()
+* The quiz 
+
+    * A simple layout, including a question, response options and a scoring system.
+    * When the user selects an answer, the button will turn red or green, depending on whether the answer is correct and the score will increase.  
+
+![The Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/start.jpeg)
 
 ### End of quiz
 
-![]()
+* Score board
+
+    * A score board with the current result also the highest score of any time if the user wants to replay.
+    * This will give the user a overview of the results.
+
+![End of Quiz](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/quiz.jpeg)
 ## Design 
 
 ### WireFrames 
