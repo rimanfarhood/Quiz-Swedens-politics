@@ -96,7 +96,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 const start = document.getElementById("start");
-const startBtn = document.getElementById("start-btn");
+
 const game = document.getElementById("game");
 const quitBtn = document.getElementById("quit-btn");
 const highScore = document.getElementById("high-score");
@@ -104,7 +104,7 @@ const highScore = document.getElementById("high-score");
 quitBtn.addEventListener('click', ()=> {
     start.style.display = 'block';
     game.style.display = 'none';
-})
+});
 
 /**
  * Displays the quiz game
@@ -167,7 +167,7 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === 'true';
     if(isCorrect){
         selectedBtn.classList.add('correct');
-        score++
+        score++;
         let oldScore = document.getElementById("score").innerText;
         document.getElementById("score").innerText = ++oldScore;
     } else {
@@ -193,7 +193,7 @@ function showScore() {
 
     highScore.innerHTML = setHighScore(score);
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextBtn.innerHTML = 'Play Again'
+    nextBtn.innerHTML = 'Play Again';
     nextBtn.style.display = 'block';
 }
 
