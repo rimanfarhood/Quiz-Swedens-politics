@@ -9,6 +9,7 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 ### Site Wide 
 
 * Footer 
+
     * Containing two social media icons connected to my GitHub and LinkedIn profile.
 
 ![Footer](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/images/footer.jpeg)
@@ -50,8 +51,21 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 
 * Buttons 
 
-    * 
-    * 
+    .The Start Quiz button is expected to display quiz to the user.
+
+      - Result: When clicking the button it displays the quiz as it is supposed to do.
+
+    
+    .The answer option buttons is expected to display the diffrent answers to that specific question and when the user makes a choice the background is supposed to change to red  
+      or green depending on the result.
+
+      -  Result: The button diplays the answers options and when correct answer selected button turns green if wrong the button tu
+        rns red and correct option turns green as expected.
+    
+
+    .The Next button is expected to display the next question if there is more questions if not is it supposed to display the results.
+
+       -  Result: The button displays the next question after te last question it displays the results. 
 
 * Functions 
 
@@ -74,49 +88,35 @@ A quiz a that tests how generally educated you are in Swedish politics, contains
 
 ### Wave
 
-*  
+* I had an error due to an empty button that I corrected by adding content to the button. 
 
-![]()
+![Wave error](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/waveerror.jpeg)
+
+![Wave](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/wavefix.png)
 
 ### Lighthouse 
 
 #### Mobile 
 
-- Start quiz
+- Quiz
 
-![]()
-
-- Play quiz
-
-![]()
-
-- Quiz end
-
-![]()
+![Mobile](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/lighthousemob.jpeg)
 
 #### Desktop 
 
-- Start quiz
+- Quiz
 
-![]()
-
-- Play quiz
-
-![]()
-
-- Quiz end
-
-![]()
+![Desktop](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/lighthousedesk.jpeg)
 
 ### Validator Testing 
 
 #### HTML
 
-![]()
+![HTML](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/html1-w3.jpeg)
 
 #### CSS 
 
-![]()
+![CSS](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/w3c.jpeg)
 
 ### Unfixed Bugs 
 
