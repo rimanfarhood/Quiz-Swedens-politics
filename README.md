@@ -117,7 +117,7 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
 
 ### External links
 
-   **Icons - should open the social media in a new tab.** 
+   **Icons - Should open the social media in a new tab.** 
 
    **Result:** When testing the GitHub icon a new tab opened with my GitHub profile, when testing the LinkedIn icon a new tab with my LinkedIn profile opened. The links worked as expected.
 
