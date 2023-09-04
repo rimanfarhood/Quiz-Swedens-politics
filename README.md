@@ -154,11 +154,16 @@ This quiz assesses your general knowledge of Swedish politics and includes 10 ea
 
 ![CSS](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/w3c.jpeg)
 
+#### JSHint 
+
+![JSHint](https://github.com/rimanfarhood/Quiz-Swedens-politics/blob/main/assets/readme/testing/jshint.jpeg)
+
 ## Tecnologies used
 
   * HTML, for the Structure.
   * CSS, to add the style.
   * JavaScript, to create dynamic content.
+  * [JSHint](https://jshint.com/)
   * [Gitpod](https://www.gitpod.io/), coding, editing and preview.
   * [Github](https://github.com), store code and deployment.
   * [Reverso](https://www.reverso.net/spell-checker/english-spelling-grammar/), to check spelling and grammar. 
