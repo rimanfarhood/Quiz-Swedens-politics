@@ -102,26 +102,48 @@ const quitBtn = document.getElementById("quit-btn");
 const highScore = document.getElementById("high-score");
 
 quitBtn.addEventListener('click', ()=> {
-    start.style.display = 'block';
-    game.style.display = 'none';
+    show(start);
+    hide(game);
 });
+
 
 /**
  * Displays the quiz game
  */
 function startQuiz() {
-    start.style.display = 'none';
-    game.style.display = 'block';
+    hide(start);
+    show(game);
 
     currentQuestionIndex = 0;
     score = 0;
     highScore.innerHTML = localStorage.getItem("score") || 0;
     questions = shuffle(questions);
-    document.getElementById("score").innerText = 0;
-    document.getElementById("incorrect").innerText = 0;
-    nextBtn.innerHTML = "Next";
+
+    setText("score", 0)
+    setText("incorrect", 0)
+    setHtml(nextBtn, "Next")
+
     showQuestion();
 }
+
+
+// Helper functions
+function hide(element) {
+    element.style.display = 'none'
+}
+ 
+function show(element) {
+    element.style.display = 'block'
+}
+ 
+function setText(element, text) {
+    document.getElementById(element).innerText = text;
+}
+
+function setHtml(element, html) {
+    element.innerHTML = html;
+}
+ 
 
 /**
  * Displays the questions
