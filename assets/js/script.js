@@ -119,9 +119,9 @@ function startQuiz() {
     highScore.innerHTML = localStorage.getItem("score") || 0;
     questions = shuffle(questions);
 
-    setText("score", 0)
-    setText("incorrect", 0)
-    setHtml(nextBtn, "Next")
+    setText("score", 0);
+    setText("incorrect", 0);
+    setHtml(nextBtn, "Next");
 
     showQuestion();
 }
@@ -129,11 +129,11 @@ function startQuiz() {
 
 // Helper functions
 function hide(element) {
-    element.style.display = 'none'
+    element.style.display = 'none';
 }
  
 function show(element) {
-    element.style.display = 'block'
+    element.style.display = 'block';
 }
  
 function setText(element, text) {
@@ -202,19 +202,19 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === 'true';
 
     if (isCorrect) {
-        addClass(selectedBtn, 'correct')
+        addClass(selectedBtn, 'correct');
         score++;
         let oldScore = document.getElementById("score").innerText;
-        setText("score", ++oldScore)
+        setText("score", ++oldScore);
     } else {
-        addClass(selectedBtn, 'incorrect')
+        addClass(selectedBtn, 'incorrect');
         let oldScore = document.getElementById("incorrect").innerText;
-        setText("incorrect", ++oldScore)
+        setText("incorrect", ++oldScore);
     }
 
     Array.from(answerButtons.children).forEach(button => {
         if (button.dataset.correct === 'true') {
-            addClass(button, 'correct')
+            addClass(button, 'correct');
         }
         button.disabled = true;
     });
@@ -228,7 +228,7 @@ function selectAnswer(e) {
  * @param {string} result - The class to add
  */
 function addClass(selected, result) {
-    selected.classList.add(result)
+    selected.classList.add(result);
 }
 
 
@@ -241,7 +241,7 @@ function showScore() {
     setHtml(highScore, setHighScore(score));
     setHtml(questionElement, `You scored ${score} out of ${questions.length}!`);
     setHtml(nextBtn, 'Play Again');
-    show(nextBtn)
+    show(nextBtn);
 }
 
 
