@@ -244,6 +244,8 @@ function showScore() {
     show(nextBtn)
 }
 
+
+// This function code is taken from the tutorial credited in the documentation
 /**
  * Handles next button. 
  */
@@ -256,6 +258,8 @@ function handleNextButton() {
     }
 }
 
+
+// This function code is taken from the source credited in the documentation
 /**
  * Fisher-Yates Shuffle used to shuffle arrays
  * @param {[]} array - an array to shuffle
@@ -286,6 +290,7 @@ function setHighScore(gameScore) {
     }
 }
 
+// This function code is taken from the tutorial credited in the documentation
 nextBtn.addEventListener('click', ()=> {
     if(currentQuestionIndex < questions.length) {
         handleNextButton();
