@@ -186,10 +186,8 @@ function createButton(text, isCorrect) {
  * Displays next question.
  */
 function resetState() {
-    nextBtn.style.display = 'none';
-    while(answerButtons.firstChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
+    hide(nextBtn);
+    setHtml(answerButtons, '');
 }
 
 
