@@ -150,23 +150,37 @@ function setHtml(element, html) {
  */
 function showQuestion() {
     resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNr = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNr + ". " + currentQuestion.question;
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionNr = currentQuestionIndex + 1;
+    setHtml(questionElement, `${questionNr}. ${currentQuestion.question}`)
 
     currentQuestion.answers = shuffle(currentQuestion.answers);
 
     currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
+        const button = createButton(answer.text, answer.correct);
         answerButtons.appendChild(button);
-        if(answer.correct){
-            button.dataset.correct = 'true';
-        }
         button.addEventListener('click', selectAnswer);
     });
 }
+
+// helper function create button 
+/**
+*
+* @param {string} text - Button text content
+* @param {boolean} isCorrect - Indicates if the answer is correct or not
+* @returns {HTMLButtonElement} - Created button element
+*/
+function createButton(text, isCorrect) {
+    const button = document.createElement("button");
+    setHtml(button, text);
+    button.classList.add("btn");
+    if (isCorrect) {
+        button.dataset.correct = 'true';
+    }
+
+    return button;
+}
+
 
 /**
  * Displays next question.
@@ -177,6 +191,7 @@ function resetState() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
+
 
 /**
  * 
