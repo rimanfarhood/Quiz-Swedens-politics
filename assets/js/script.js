@@ -163,13 +163,13 @@ function showQuestion() {
     });
 }
 
-// helper function create button 
+
 /**
-*
-* @param {string} text - Button text content
-* @param {boolean} isCorrect - Indicates if the answer is correct or not
-* @returns {HTMLButtonElement} - Created button element
-*/
+ * helper function create button 
+ * @param {string} text - Button text content
+ * @param {boolean} isCorrect - Indicates if the answer is correct or not
+ * @returns {HTMLButtonElement} - Created button element
+ */
 function createButton(text, isCorrect) {
     const button = document.createElement("button");
     setHtml(button, text);
@@ -200,25 +200,37 @@ function resetState() {
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === 'true';
-    if(isCorrect){
-        selectedBtn.classList.add('correct');
+
+    if (isCorrect) {
+        addClass(selectedBtn, 'correct')
         score++;
         let oldScore = document.getElementById("score").innerText;
-        document.getElementById("score").innerText = ++oldScore;
+        setText("score", ++oldScore)
     } else {
-        selectedBtn.classList.add('incorrect');
+        addClass(selectedBtn, 'incorrect')
         let oldScore = document.getElementById("incorrect").innerText;
-        document.getElementById("incorrect").innerText = ++oldScore;
+        setText("incorrect", ++oldScore)
     }
-    Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === 'true') {
-            button.classList.add('correct');
 
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === 'true') {
+            addClass(button, 'correct')
         }
         button.disabled = true;
     });
-    nextBtn.style.display = 'block';
+    show(nextBtn);
 }
+
+
+/**
+ * Helper function to add class
+ * @param {HTMLElement} selected - The element selected
+ * @param {string} result - The class to add
+ */
+function addClass(selected, result) {
+    selected.classList.add(result)
+}
+
 
 /**
  * Displays result at the end of game and gives user option to play again or to quit.
