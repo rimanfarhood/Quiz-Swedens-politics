@@ -238,10 +238,10 @@ function addClass(selected, result) {
 function showScore() {
     resetState();
 
-    highScore.innerHTML = setHighScore(score);
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextBtn.innerHTML = 'Play Again';
-    nextBtn.style.display = 'block';
+    setHtml(highScore, setHighScore(score));
+    setHtml(questionElement, `You scored ${score} out of ${questions.length}!`);
+    setHtml(nextBtn, 'Play Again');
+    show(nextBtn)
 }
 
 /**
