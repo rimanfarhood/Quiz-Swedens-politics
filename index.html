@@ -19,8 +19,8 @@
     <!--Landing page section-->
 
     <div id="start">
-        <p>Test your knowledge about Sweden's politic with our quiz!</p>
-        <div>
+        <h1 class="heading">Test your knowledge about Sweden's politic with our quiz!</h1>
+        <div class="diff">
             <label for="level">Select Difficulty</label>
             <select id="level">
                 <option value="Easy">Easy</option>
@@ -29,6 +29,24 @@
             </select>
         </div>
         <button id="start-btn" class="btn" onclick="startQuiz();">Start Quiz</button>
+        <div>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Instructions</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <ol>
+                        <li>Select level of Difficulty</li>
+                        <li>Start the quiz</li>
+                        <li>Read the question, select an option</li>
+                        <li>Once you select an option you cannot change it</li>
+                        <li>Button will turn green if correct and red if incorrect and
+                            your score will increase</li>
+                        <li>To exit press the exit button at the bottom of the page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Quiz -->

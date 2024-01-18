@@ -1,9 +1,25 @@
+// Modal
+const modal = document.getElementById("myModal");
+
+const btn = document.getElementById("myBtn");
+
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Difficulty selector
 var level = document.querySelector('#level');
 
-let diff = 'Easy'
+let selectedDifficulty = 'Easy'
 
-level.addEventListener('change', ()=> {
-    diff = level.value;
+level.addEventListener('change', () => {
+    selectedDifficulty = level.value;
 });
 
 // Questions and answer options for the quiz.
@@ -123,6 +139,7 @@ let questions = [
     },
 ];
 
+// Variables
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -137,13 +154,13 @@ const game = document.getElementById("game");
 const quitBtn = document.getElementById("quit-btn");
 const highScore = document.getElementById("high-score");
 
+const maxQuestions = 4;
 
-
-quitBtn.addEventListener('click', ()=> {
+// Quit button
+quitBtn.addEventListener('click', () => {
     show(start);
     hide(game);
 });
-
 
 
 /**
@@ -171,11 +188,11 @@ function startQuiz() {
 function hide(element) {
     element.style.display = 'none';
 }
- 
+
 function show(element) {
     element.style.display = 'block';
 }
- 
+
 function setText(element, text) {
     document.getElementById(element).innerText = text;
 }
@@ -183,7 +200,7 @@ function setText(element, text) {
 function setHtml(element, html) {
     element.innerHTML = html;
 }
- 
+
 
 /**
  * Displays the questions
@@ -192,7 +209,7 @@ function setHtml(element, html) {
 function showQuestion() {
     resetState();
 
-    let filteredQuestions = questions.filter(question => question.difficulty === diff);
+    let filteredQuestions = questions.filter(question => question.difficulty === selectedDifficulty);
 
     let currentQuestion = filteredQuestions[currentQuestionIndex];
     let questionNr = currentQuestionIndex + 1;
@@ -284,7 +301,7 @@ function showScore() {
     resetState();
 
     setHtml(highScore, setHighScore(score));
-    setHtml(questionElement, `You scored ${score} out of ${questions.length}`);
+    setHtml(questionElement, `You scored ${score} out of ${maxQuestions}`);
     setHtml(nextBtn, 'Play Again');
     show(nextBtn);
 }
@@ -296,7 +313,7 @@ function showScore() {
  */
 function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < 4){
+    if (currentQuestionIndex < maxQuestions) {
         showQuestion();
     } else {
         showScore();
@@ -312,9 +329,9 @@ function handleNextButton() {
  */
 function shuffle(array) {
     for (let i = array.length - 1; i >= 0; i--) {
-      const randomIndex = Math.floor(Math.random() * (i + 1));
-      array.push(array[randomIndex]);
-      array.splice(randomIndex, 1);
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        array.push(array[randomIndex]);
+        array.splice(randomIndex, 1);
     }
     return array;
 }
@@ -336,8 +353,8 @@ function setHighScore(gameScore) {
 }
 
 // This function code is taken from the tutorial credited in the documentation
-nextBtn.addEventListener('click', ()=> {
-    if(currentQuestionIndex < 4) {
+nextBtn.addEventListener('click', () => {
+    if (currentQuestionIndex < maxQuestions) {
         handleNextButton();
     } else {
         startQuiz();
