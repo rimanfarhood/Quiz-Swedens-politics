@@ -16,7 +16,7 @@ window.onclick = function (event) {
 // Difficulty selector
 var level = document.querySelector('#level');
 
-let selectedDifficulty = 'Easy'
+let selectedDifficulty = 'Mix';
 
 level.addEventListener('change', () => {
     selectedDifficulty = level.value;
@@ -212,6 +212,9 @@ function showQuestion() {
     let filteredQuestions = questions.filter(question => question.difficulty === selectedDifficulty);
 
     let currentQuestion = filteredQuestions[currentQuestionIndex];
+    if (selectedDifficulty === "Mix") {
+        currentQuestion = questions[currentQuestionIndex];
+    }
     let questionNr = currentQuestionIndex + 1;
     setHtml(questionElement, `${questionNr}. ${currentQuestion.question}`);
 
@@ -222,7 +225,6 @@ function showQuestion() {
         answerButtons.appendChild(button);
         button.addEventListener('click', selectAnswer);
     });
-
 }
 
 
@@ -236,10 +238,10 @@ function createButton(text, isCorrect) {
     const button = document.createElement("button");
     setHtml(button, text);
     button.classList.add("btn");
+    
     if (isCorrect) {
         button.dataset.correct = 'true';
     }
-
     return button;
 }
 
@@ -301,7 +303,12 @@ function showScore() {
     resetState();
 
     setHtml(highScore, setHighScore(score));
-    setHtml(questionElement, `You scored ${score} out of ${maxQuestions}`);
+    if(selectedDifficulty === "Mix") {
+        setHtml(questionElement, `You scored ${score} out of ${questions.length}`);
+
+    } else {
+        setHtml(questionElement, `You scored ${score} out of ${maxQuestions}`);
+    }
     setHtml(nextBtn, 'Play Again');
     show(nextBtn);
 }
@@ -313,10 +320,18 @@ function showScore() {
  */
 function handleNextButton() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < maxQuestions) {
-        showQuestion();
+    if(selectedDifficulty === "Mix"){
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            showScore();
+        }
     } else {
-        showScore();
+        if (currentQuestionIndex < maxQuestions) {
+            showQuestion();
+        } else {
+            showScore();
+        }
     }
 }
 
@@ -354,9 +369,17 @@ function setHighScore(gameScore) {
 
 // This function code is taken from the tutorial credited in the documentation
 nextBtn.addEventListener('click', () => {
-    if (currentQuestionIndex < maxQuestions) {
-        handleNextButton();
+    if(selectedDifficulty === "Mix") {
+        if (currentQuestionIndex < questions.length) {
+            handleNextButton();
+        } else {
+            startQuiz();
+        }
     } else {
-        startQuiz();
+        if (currentQuestionIndex < maxQuestions) {
+            handleNextButton();
+        } else {
+            startQuiz();
+        }
     }
 });
