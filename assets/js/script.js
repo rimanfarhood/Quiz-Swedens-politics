@@ -1,7 +1,16 @@
+var level = document.querySelector('#level');
+
+let diff = 'Easy'
+
+level.addEventListener('change', ()=> {
+    diff = level.value;
+});
+
 // Questions and answer options for the quiz.
 
 let questions = [
     {
+        difficulty: 'Easy',
         question: "How often are there elections?",
         answers: [
             { text: 'Every four year', correct: true},
@@ -11,13 +20,7 @@ let questions = [
         ]
     },
     {
-        question: "Can you be convicted for saying something racist to someone?",
-        answers: [
-            { text: "No", correct: false},
-            { text: "Yes", correct: true},
-        ]
-    },
-    {
+        difficulty: 'Easy',
         question: 'Who received the most votes in the previous election in 2022?',
         answers: [
             { text: 'Sverigedemokraterna', correct: false},
@@ -27,23 +30,17 @@ let questions = [
         ]
     },
     {
-        question: 'Who holds the position of head of state?',
+        difficulty: 'Easy',
+        question: 'How many percent of the votes is needed to be in the Parliament?',
         answers: [
-            { text: 'Prime minister', correct: false},
-            { text: 'The speaker', correct: false},
-            { text: 'The king', correct: true},
+            { text: '20%', correct: false},
+            { text: '2%', correct: false},
+            { text: '12,5', correct: false},
+            { text: '4%', correct: true},
         ]
     },
     {
-        question: 'What year did Women get the right to vote?',
-        answers: [
-            { text: '1921', correct: true},
-            { text: '1919', correct: false},
-            { text: 'Women have always had the right to vote', correct: false},
-            { text: '1780', correct: false},
-        ]
-    },
-    {
+        difficulty: 'Easy',
         question: 'Who was the first female Prime minister?',
         answers: [
             { text: 'Nooshi Dadgostar', correct: false},
@@ -53,6 +50,7 @@ let questions = [
         ]
     },
     {
+        difficulty: 'Medium',
         question: 'How many mandates are there in the Parliament?',
         answers: [
             { text: '49', correct: false},
@@ -62,14 +60,24 @@ let questions = [
         ]
     },
     {
+        difficulty: 'Medium',
         question: "What are Sweden's constitutions?", 
         answers: [
             { text: "The form of government, the succession order, the freedom of the press regulation and the freedom of expression law ", correct: true},
             { text: "Common law, the form of government, the Criminal Code and the Discrimination Act", correct : false},
-            { text: "The Freedom of Expression Act, the form of government and the rules of the parlament", correct: false},
+            { text: "The Freedom of Expression Act, the form of government and the rules of the parliament", correct: false},
         ]
     },
     {
+        difficulty: 'Medium',
+        question: "Can you be convicted for saying something racist to someone?",
+        answers: [
+            { text: "No", correct: false},
+            { text: "Yes", correct: true},
+        ]
+    },
+    {
+        difficulty: 'Medium',
         question: 'How are the mandates in the Parliament distributed?',
         answers: [
             { text: 'The party gets as many percent of the seats as they got in the election', correct: true},
@@ -78,15 +86,43 @@ let questions = [
         ]
     },
     {
-        question: 'How many percent of the votes is needed to be in the Parlament?',
+        difficulty: 'Hard',
+        question: 'Can you be sentenced to prison for own use of cannabis?',
         answers: [
-            { text: '20%', correct: false},
-            { text: '2%', correct: false},
-            { text: '12,5', correct: false},
-            { text: '4%', correct: true},
+            { text: 'Yes', correct: true},
+            { text: 'No', correct: false},
         ]
-    }
+    },
+    {
+        difficulty: 'Hard',
+        question: 'What is a proposal?',
+        answers: [
+            { text: 'A suggestion from the Speaker', correct: false},
+            { text: 'A suggestion from the government', correct: true},
+            { text: 'A suggestion from the Parliament', correct: false},
+        ]
+    },
+    {
+        difficulty: 'Hard',
+        question: 'Who holds the position of head of state?',
+        answers: [
+            { text: 'Prime minister', correct: false},
+            { text: 'The speaker', correct: false},
+            { text: 'The king', correct: true},
+        ]
+    },
+    {
+        difficulty: 'Hard',
+        question: 'What year did Women get the right to vote?',
+        answers: [
+            { text: '1921', correct: true},
+            { text: '1919', correct: false},
+            { text: 'Women have always had the right to vote', correct: false},
+            { text: '1780', correct: false},
+        ]
+    },
 ];
+
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -101,10 +137,13 @@ const game = document.getElementById("game");
 const quitBtn = document.getElementById("quit-btn");
 const highScore = document.getElementById("high-score");
 
+
+
 quitBtn.addEventListener('click', ()=> {
     show(start);
     hide(game);
 });
+
 
 
 /**
@@ -118,6 +157,7 @@ function startQuiz() {
     score = 0;
     highScore.innerHTML = localStorage.getItem("score") || 0;
     questions = shuffle(questions);
+
 
     setText("score", 0);
     setText("incorrect", 0);
@@ -148,11 +188,15 @@ function setHtml(element, html) {
 /**
  * Displays the questions
  */
+
 function showQuestion() {
     resetState();
-    const currentQuestion = questions[currentQuestionIndex];
-    const questionNr = currentQuestionIndex + 1;
-    setHtml(questionElement, `${questionNr}. ${currentQuestion.question}`)
+
+    let filteredQuestions = questions.filter(question => question.difficulty === diff);
+
+    let currentQuestion = filteredQuestions[currentQuestionIndex];
+    let questionNr = currentQuestionIndex + 1;
+    setHtml(questionElement, `${questionNr}. ${currentQuestion.question}`);
 
     currentQuestion.answers = shuffle(currentQuestion.answers);
 
@@ -161,6 +205,7 @@ function showQuestion() {
         answerButtons.appendChild(button);
         button.addEventListener('click', selectAnswer);
     });
+
 }
 
 
@@ -239,7 +284,7 @@ function showScore() {
     resetState();
 
     setHtml(highScore, setHighScore(score));
-    setHtml(questionElement, `You scored ${score} out of ${questions.length}!`);
+    setHtml(questionElement, `You scored ${score} out of ${questions.length}`);
     setHtml(nextBtn, 'Play Again');
     show(nextBtn);
 }
@@ -251,7 +296,7 @@ function showScore() {
  */
 function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length){
+    if(currentQuestionIndex < 4){
         showQuestion();
     } else {
         showScore();
@@ -292,7 +337,7 @@ function setHighScore(gameScore) {
 
 // This function code is taken from the tutorial credited in the documentation
 nextBtn.addEventListener('click', ()=> {
-    if(currentQuestionIndex < questions.length) {
+    if(currentQuestionIndex < 4) {
         handleNextButton();
     } else {
         startQuiz();
