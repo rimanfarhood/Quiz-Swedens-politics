@@ -16,11 +16,12 @@ window.onclick = function (event) {
 // Difficulty selector
 var level = document.querySelector('#level');
 
-let selectedDifficulty = 'Mix';
+let selectedDifficulty = "";
 
 level.addEventListener('change', () => {
     selectedDifficulty = level.value;
 });
+
 
 // Questions and answer options for the quiz.
 
@@ -167,8 +168,13 @@ quitBtn.addEventListener('click', () => {
  * Displays the quiz game
  */
 function startQuiz() {
-    hide(start);
-    show(game);
+    if (selectedDifficulty === "") {
+        alert("Please select a difficulty level before starting the quiz.");
+    } else {
+        hide(start);
+        show(game);
+    }
+    
 
     currentQuestionIndex = 0;
     score = 0;
